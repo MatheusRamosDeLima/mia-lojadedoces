@@ -4,6 +4,10 @@
     },
     "routes": [
         {
+            "src": "/js/(.*)",
+            "dest": "/public/js/(.*)"
+        },
+        {
             "src": "/css/(.*)",
             "dest": "/public/css/(.*)"
         },
