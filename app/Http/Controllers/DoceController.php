@@ -17,7 +17,19 @@ class DoceController extends Controller {
         return view('pages/doces/index', compact('doces'));
     }
     public function produto(string $id) {
-        $doce = $this->docesTable->getDoceById($id);
-        return view('pages/doces/produto', compact('doce'));
+        $doces = $this->docesTable->getAllDoces();
+        if (isThereDoceInDb($doces, $id)) {
+            $doce = $this->docesTable->getDoceById($id);
+            return view('pages/doces/produto', compact('doce'));
+        } else {
+            return view('errors/404');
+        }
     }
+}
+
+function isThereDoceInDb($doces, string $id) {
+    foreach ($doces as $doce) {
+        if ($id === $doce->id) return true;
+    }
+    return false;
 }

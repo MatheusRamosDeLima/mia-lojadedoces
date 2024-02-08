@@ -31,24 +31,18 @@
                 <span>Ver mais detalhes</span>
                 <div id="arrow"></div>
             </div>
-            <div id="information">{{$doce->text}}</div>
+            <div id="information">{!! $doce->text !!}</div>
         </div>
         <div id="product-flavors-and-prices">
             <div id="product-flavors">
                 @foreach ($doce->pricesPerFlavor as $flavor => $price)
                     <button class="product-flavor" data-flavor="{{$flavor}}">{{$flavor}}</button>
                 @endforeach
-                {{--
-                <button class="product-flavor selected" data-flavor="flavor-name">flavor-name</button>
-                --}}
             </div>
             <div id="product-prices">
                 @foreach ($doce->pricesPerFlavor as $flavor => $price)
                     <p class="product-price" data-price="{{$flavor}}">{{$price}}</p>
                 @endforeach
-                {{--
-                <p class="product-price selected" data-price="flavor-name">flavor-price</p>
-                --}}
             </div>
         </div>
     </div>
