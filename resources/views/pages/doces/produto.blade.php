@@ -17,7 +17,7 @@
     @endphp
     <picture id="product-sect-image">
         <div id="product-image-cnt">
-            <img src="{{$doce->img->url}}" alt="Imagem de {{$doce->name}}" id="product-image">
+            <img src="/imgs/products/{{$doce->img->url}}" alt="Imagem de {{$doce->name}}" id="product-image">
         </div>
         @if($doce->img->isIllustrative)
             <figcaption>* Imagem meramente ilustrativa</figcaption>

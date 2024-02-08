@@ -15,7 +15,7 @@
             $doce->img = json_decode($doce->img);
         @endphp
         <a href="/doces/produto/{{$doce->id}}" rel="next" class="product">
-            <div style="background-image: url('{{$doce->img->url}}')" class="img"></div>
+            <div style="background-image: url('/imgs/products/{{$doce->img->url}}')" class="img"></div>
             <div class="info">
                 <h2 class="product-title">{{$doce->name}}</h2>
                 <p class="product-slogan">{{$doce->slogan}}</p>
